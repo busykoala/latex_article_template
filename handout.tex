@@ -1,6 +1,6 @@
 \documentclass{article}
 
-\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage[hidelinks]{hyperref}
@@ -13,12 +13,29 @@
 \addbibresource{bib/literature}
 \usepackage{csquotes}
 \emergencystretch=1em
+\usepackage{fancyhdr}
+
+% add and format date
+\usepackage{datetime}
+\newdateformat{monthdayyeardate}{%
+  \THEDAY. \monthname[\THEMONTH] \THEYEAR}
+
+% setup fancy header
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Top right text}
+\lhead{Top left text}
+\rfoot{Seite \thepage}
+\lfoot{\monthdayyeardate\today}
 
 \begin{document}
 
 \section{Example Section}\label{section_one}
 
 Citation \cite{aharonov2008quantum}.
+
+% add vertical space
+\vspace{1cm}
 
 Reference to \autoref{section_one}
 
@@ -37,8 +54,13 @@ Reference to \autoref{section_one}
       2 & Dolorum
         & Est \\ \hline
   \end{tabularx}
-  \caption{Example Table}
+  \caption{Example Table}\label{tbl:example_table}
 \end{table}
+
+\begin{figure}[H]
+  \[ E = m c^2 \]
+  \caption{Example Equation}\label{eq:example_equation}
+\end{figure}
 
 % **************************************
 % Table of figure/tables & bibliography
