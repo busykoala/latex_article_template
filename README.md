@@ -1,5 +1,7 @@
 # Handout Example
 
+A latex template for an article using `ieee` citation style.
+
 ## Compile document
 
 ```
