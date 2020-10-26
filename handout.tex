@@ -1,0 +1,22 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage[style=ieee,backend=biber]{biblatex}
+\addbibresource{bib/literature}
+\usepackage{csquotes}
+
+\begin{document}
+
+\section{Example Section}\label{section_one}
+
+Citation \cite{aharonov2008quantum}.
+Reference to \autoref{section_one}
+
+\renewcommand{\listfigurename}{}
+\listoffigures
+
+\printbibliography
+\end{document}
